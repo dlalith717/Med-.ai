@@ -1,0 +1,96 @@
+:root {
+    --bg-dark: #0f172a;
+    --neon-blue: #38bdf8;
+    --neon-purple: #8b5cf6;
+    --neon-pink: #f472b6;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+body, html {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top right, #1e293b, #0f172a);
+    color: white; overflow-x: hidden;
+}
+
+.page-container {
+    min-height: 100vh;
+    padding: 20px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.hidden { display: none; }
+
+.flex-center {
+    display: flex; justify-content: center; align-items: center;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Flashy Buttons */
+.btn-neon {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-patient { background: var(--neon-pink); color: white; }
+.btn-doctor { background: var(--neon-blue); color: white; }
+
+.btn-neon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+/* Dashboard Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.input-glow {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #475569;
+    border-radius: 10px;
+    color: white;
+}
+
+.input-glow:focus {
+    border-color: var(--neon-blue);
+    outline: none;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
